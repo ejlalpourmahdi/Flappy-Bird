@@ -16,13 +16,14 @@ The objective is to survive as long as possible and achieve a higher score.
 
 ## ✨ Features
 
-* 🐦 Player movement
-* 🧱 Pipe obstacle generation
-* 💥 Collision detection
-* 🏆 Score system
-* 🎮 Game over system
-* 🔄 Continuous game loop
-* 🔊 Game audio support
+- 🐦 Player movement
+- 🧱 Pipe obstacle generation
+- 💥 Collision detection
+- 🏆 Score system
+- 🎮 Game over system
+- 🔄 Continuous game loop
+- 🔊 Game audio support
+- ⏸️ Pause System
 
 ---
 
@@ -39,10 +40,10 @@ The objective is to survive as long as possible and achieve a higher score.
 Flappy-Bird/
 │
 ├── assets/
-│   └── audio/
-│       └── wing.wav
+│   ├── images
+│   └── sounds
 │
-├── main.py
+├── flappy_bird.py
 └── README.md
 ```
 
@@ -106,13 +107,13 @@ pip3 install pygame
 After installing the requirements, run the main Python file:
 
 ```bash
-python main.py
+python flappy_bird.py
 ```
 
 Or:
 
 ```bash
-python3 main.py
+python3 flappy_bird.py
 ```
 
 The game window should open automatically.
@@ -123,7 +124,7 @@ The game window should open automatically.
 
 | Key     | Action            |
 | ------- | ----------------- |
-| `SPACE` | Make the bird fly |
+| `Left Click` | Make the bird fly |
 | `ESC`   | Exit the game     |
 
 > Controls may vary depending on the current version of the project.
@@ -160,9 +161,6 @@ Make sure the required asset files remain in their expected locations before run
 Possible improvements for future versions include:
 
 * 🎨 Improved graphics and animations
-* 🏅 High-score system
-* ⏸️ Pause functionality
-* 🔄 Restart button
 * 🎵 Additional sound effects
 * 📈 Difficulty progression
 * 🏆 Local leaderboard
