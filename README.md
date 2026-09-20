@@ -77,7 +77,7 @@ python3 --version
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_REPOSITORY_URL
+git clone [github.com/ejlalpourmahdi/Flappy-Bird/](https://github.com/ejlalpourmahdi/Flappy-Bird/)
 ```
 
 Then move into the project directory:
