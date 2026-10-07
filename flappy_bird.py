@@ -133,3 +133,9 @@ playButtonIcon = pygame.transform.scale_by(playButtonIcon, 3)
 playButtonX = 505
 playButtonY = 620
 playButtonRect = playButtonIcon.get_rect(topleft = (playButtonX, playButtonY))
+
+
+#tutorial
+tutorial = False
+tutorialIMG = pygame.image.load("Python - Projects/flappy bird/assets/images/click-tutorial.png")
+tutorialIMG = pygame.transform.scale(tutorialIMG, (144, 384))
