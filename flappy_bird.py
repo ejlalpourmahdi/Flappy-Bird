@@ -55,3 +55,41 @@ class Bird:
         self.jumpPower = -8
         self.size = 50
 bird = Bird(birdIcon)
+
+#pipes settings
+pipeWidth = 100
+pipeIcon = pygame.image.load("Python - Projects/flappy bird/assets/images/pipe-icon.png")
+rotatedPipeIcon = pygame.image.load("Python - Projects/flappy bird/assets/images/rotated-pipe-icon.png")
+pipes = []
+class Pipe:
+    def __init__(self):
+        self.x = displayWidth
+        self.width = 70
+        self.gap = 150
+        self.bottomPipeHeight = random.randint(100, 400)
+        self.bottomPipeY = displayHeigth - self.bottomPipeHeight
+        self.pipeIcon = pygame.transform.scale(pipeIcon, (pipeWidth, self.bottomPipeHeight))
+        self.topPipeHeight = displayHeigth - (self.bottomPipeHeight + self.gap)
+        self.rotatedPipeIcon = pygame.transform.scale(rotatedPipeIcon, (pipeWidth, self.topPipeHeight))
+        self.speed = 4
+
+    #move the pipes
+    def move(self):
+        self.x -= self.speed
+
+    #render the pipes
+    def render(self):
+        screen.blit(self.rotatedPipeIcon, (self.x, 0))
+        screen.blit(self.pipeIcon, (self.x, self.bottomPipeY))
+
+    def reset(self):
+        self.x = displayWidth
+        self.width = 70
+        self.gap = 150
+        self.bottomPipeHeight = random.randint(100, 400)
+        self.bottomPipeY = displayHeigth - self.bottomPipeHeight
+        self.pipeIcon = pygame.transform.scale(pipeIcon, (pipeWidth, self.bottomPipeHeight))
+        self.topPipeHeight = displayHeigth - (self.bottomPipeHeight + self.gap)
+        self.rotatedPipeIcon = pygame.transform.scale(rotatedPipeIcon, (pipeWidth, self.topPipeHeight))
+        self.speed = 4
+pipes.append(Pipe())
