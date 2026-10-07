@@ -118,3 +118,8 @@ newRecordIcon = pygame.transform.scale_by(newRecordIcon, 2)
 newRecord = False
 score = 0
 bestScore = 0
+
+#musics and sounds
+pygame.mixer.music.load("Python - Projects/flappy bird/assets/sounds/game-music.mp3")
+pygame.mixer.music.play(-1)
+wing = pygame.mixer.Sound("Python - Projects/flappy bird/assets/sounds/wing.wav")
