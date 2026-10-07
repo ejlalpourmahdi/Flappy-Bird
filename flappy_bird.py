@@ -160,3 +160,7 @@ while running:
         #bird jump
         if pygame.mouse.get_pressed()[0]:
             bird.jump()
+
+    #render the background
+    screen.blit(background, (0, 0))
+    screen.blit(ground, (groundScroll, 736))
