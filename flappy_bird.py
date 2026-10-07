@@ -139,3 +139,11 @@ playButtonRect = playButtonIcon.get_rect(topleft = (playButtonX, playButtonY))
 tutorial = False
 tutorialIMG = pygame.image.load("Python - Projects/flappy bird/assets/images/click-tutorial.png")
 tutorialIMG = pygame.transform.scale(tutorialIMG, (144, 384))
+
+#loading
+loadingIMG = pygame.image.load("Python - Projects/flappy bird/assets/images/loading.jpg")
+loadingIMG = pygame.transform.scale(loadingIMG, (1200, 800))
+menuLoading = False
+mlc = 0
+gameoverLoading = False
+goc = 0
