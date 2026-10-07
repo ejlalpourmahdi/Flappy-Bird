@@ -147,3 +147,16 @@ menuLoading = False
 mlc = 0
 gameoverLoading = False
 goc = 0
+
+#fps
+fps = pygame.time.Clock()
+
+running = True
+while running:
+    for e in pygame.event.get():
+        if e.type == pygame.QUIT:
+            running = False
+            pygame.mixer.music.stop()
+        #bird jump
+        if pygame.mouse.get_pressed()[0]:
+            bird.jump()
