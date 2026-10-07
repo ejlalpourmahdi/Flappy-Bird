@@ -178,3 +178,12 @@ while running:
         screen.blit(logoType, (376, 20))
         screen.blit(birdIcon , (826 , 118))
         screen.blit(startButtonIcon, (435, 550))
+
+    #tutorial performance
+    if tutorial:
+        if pygame.mouse.get_pressed()[0]:
+            tutorial = False
+
+        #render the tutorial sources
+        bird.render()
+        screen.blit(tutorialIMG, (558, 208))
