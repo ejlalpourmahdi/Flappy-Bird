@@ -101,3 +101,20 @@ startButtonIcon = pygame.image.load("Python - Projects/flappy bird/assets/images
 startButtonIcon = pygame.transform.scale(startButtonIcon, (330, 130))
 startButtonRect = startButtonIcon.get_rect(topleft = (435, 550))
 menu = True
+
+#score
+scoreTable = pygame.image.load("Python - Projects/flappy bird/assets/images/scores-table.png")
+scoreTable = pygame.transform.scale_by(scoreTable, 5)
+ironMedal = pygame.image.load("Python - Projects/flappy bird/assets/images/iron-medal.png")
+ironMedal = pygame.transform.scale_by(ironMedal, 5)
+bronzeMedal = pygame.image.load("Python - Projects/flappy bird/assets/images/bronze-medal.png")
+bronzeMedal = pygame.transform.scale_by(bronzeMedal, 5)
+silverMedal = pygame.image.load("Python - Projects/flappy bird/assets/images/silver-medal.png")
+silverMedal = pygame.transform.scale_by(silverMedal, 5)
+goldMedal = pygame.image.load("Python - Projects/flappy bird/assets/images/gold-medal.png")
+goldMedal = pygame.transform.scale_by(goldMedal, 5)
+newRecordIcon = pygame.image.load("Python - Projects/flappy bird/assets/images/new-record-icon.png")
+newRecordIcon = pygame.transform.scale_by(newRecordIcon, 2)
+newRecord = False
+score = 0
+bestScore = 0
