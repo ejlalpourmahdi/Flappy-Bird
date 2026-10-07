@@ -236,3 +236,19 @@ while running:
         screen.blit(scoreTextBorder , (572 , 17))
         screen.blit(scoreText , (575 , 20))
         pygame.display.update()
+
+    #loading performance
+    if menuLoading:
+        mlc += 1
+        if mlc < 150:
+            screen.blit(loadingIMG, (0, 0))
+        else:
+            menuLoading = False
+            tutorial = True
+    if gameoverLoading:
+        goc += 1
+        if goc < 150:
+            screen.blit(loadingIMG, (0, 0))
+        else:
+            gameoverLoading = False
+            menu = True
