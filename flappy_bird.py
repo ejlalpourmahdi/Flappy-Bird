@@ -164,3 +164,17 @@ while running:
     #render the background
     screen.blit(background, (0, 0))
     screen.blit(ground, (groundScroll, 736))
+
+
+    #menu performance
+    if menu:
+        mousePos = pygame.mouse.get_pos()
+        if pygame.mouse.get_pressed()[0] and startButtonRect.collidepoint(mousePos):
+            menu = False
+            menuLoading = True
+            mlc = 0
+        
+        #render the menu sources
+        screen.blit(logoType, (376, 20))
+        screen.blit(birdIcon , (826 , 118))
+        screen.blit(startButtonIcon, (435, 550))
