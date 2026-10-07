@@ -123,3 +123,13 @@ bestScore = 0
 pygame.mixer.music.load("Python - Projects/flappy bird/assets/sounds/game-music.mp3")
 pygame.mixer.music.play(-1)
 wing = pygame.mixer.Sound("Python - Projects/flappy bird/assets/sounds/wing.wav")
+
+#gameover settings
+gameover = False
+gameoverIcon = pygame.image.load("Python - Projects/flappy bird/assets/images/game-over-icon.png")
+gameoverIcon = pygame.transform.scale(gameoverIcon, (384, 84))
+playButtonIcon = pygame.image.load("Python - Projects/flappy bird/assets/images/play-button.png")
+playButtonIcon = pygame.transform.scale_by(playButtonIcon, 3)
+playButtonX = 505
+playButtonY = 620
+playButtonRect = playButtonIcon.get_rect(topleft = (playButtonX, playButtonY))
