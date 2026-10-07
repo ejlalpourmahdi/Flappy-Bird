@@ -93,3 +93,11 @@ class Pipe:
         self.rotatedPipeIcon = pygame.transform.scale(rotatedPipeIcon, (pipeWidth, self.topPipeHeight))
         self.speed = 4
 pipes.append(Pipe())
+
+#menu
+logoType = pygame.image.load("Python - Projects/flappy bird/assets/images/Flappy-Bird-logo.png")
+logoType = pygame.transform.scale(logoType, (448, 216))
+startButtonIcon = pygame.image.load("Python - Projects/flappy bird/assets/images/start-button.png")
+startButtonIcon = pygame.transform.scale(startButtonIcon, (330, 130))
+startButtonRect = startButtonIcon.get_rect(topleft = (435, 550))
+menu = True
