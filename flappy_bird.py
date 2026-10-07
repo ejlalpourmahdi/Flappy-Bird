@@ -252,3 +252,67 @@ while running:
         else:
             gameoverLoading = False
             menu = True
+
+    #gameover performance
+    if gameover:
+        if score > bestScore :
+            bestScore = score
+            if score != 0:
+                newRecord = True
+        
+        #render gameover text
+        gmoY += 3
+        if gmoY > 100:
+            gmoY = 100
+        screen.blit(gameoverIcon, (404, gmoY))
+        
+        #render scores table
+        stY -= 5
+        if stY < 310:
+            stY = 310
+        screen.blit(scoreTable, (287, stY))
+
+
+        #render score and best score
+        if stY == 310:
+            if stc < score:
+                stc += 1
+            stcText = font.render(f"{stc}", True, (255, 255, 255))
+            stcBorder = border.render(f"{stc}", True, (0, 0, 0))
+            screen.blit(stcBorder, (732 , 390))
+            screen.blit(stcText, (735 , 393))
+            if bestScorec < bestScore:
+                bestScorec += 1
+            bstcText = font.render(f"{bestScorec}", True, (255, 255, 255))
+            bstcBorder = border.render(f"{bestScorec}", True, (0, 0, 0))
+            screen.blit(bstcBorder, (732 , 500))
+            screen.blit(bstcText, (735 , 503))
+            #render the new record icon
+            if newRecord:
+                screen.blit(newRecordIcon, (672, 525))
+            #render the medals
+            if 10 <= score < 20:
+                screen.blit(ironMedal, (353, 415))
+            if 20 <= score < 30:
+                screen.blit(bronzeMedal, (353, 415))
+            if 30 <= score < 40:
+                screen.blit(silverMedal, (353, 415))
+            if 40 <= score:
+                screen.blit(goldMedal, (353, 415))
+
+            #render play button
+            screen.blit(playButtonIcon, (playButtonX, playButtonY))
+            mousePos = pygame.mouse.get_pos()
+            if pygame.mouse.get_pressed()[0] and playButtonRect.collidepoint(mousePos):
+                goc = 0
+                gameoverLoading = True
+                gameover = False
+                score = 0
+                bird.reset()
+                Pipe().reset()
+                newRecord = False
+                pipes=[]
+                pipes.append(Pipe())
+
+    pygame.display.update()
+    fps.tick(60)
