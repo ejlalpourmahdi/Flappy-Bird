@@ -187,3 +187,52 @@ while running:
         #render the tutorial sources
         bird.render()
         screen.blit(tutorialIMG, (558, 208))
+
+    #game performance
+    if menu == False and tutorial == False and gameover == False and menuLoading == False and gameoverLoading == False:
+        
+
+        #ground moves
+        groundScroll -= 1
+        if groundScroll < -89:
+            groundScroll = 0
+
+        #bird fall
+        bird.fall()
+
+        #render the pipes
+        for i in range(len(pipes)):
+            pipes[i].move()
+            pipes[i].render()
+            #load new pipes
+            if pipes[-1].x < 550:
+                pipes.append(Pipe())
+            
+            #bird collision check
+            if ((bird.y <= pipes[i].topPipeHeight) and (pipes[i].x <= bird.x <= pipes[i].x+pipeWidth)) or ((bird.y >= displayHeigth-pipes[i].bottomPipeHeight-10) and (pipes[i].x <= bird.x <= pipes[i].x+pipeWidth)):
+                gameover = True
+                gmoY = 0
+                stY = 800
+                stc = 0
+                bestScorec = 0
+                
+            if bird.y < 0 or bird.y > 800 - birdHeight:
+                gameover = True
+                gmoY = 0
+                stY = 800
+                stc = 0
+                bestScorec = 0
+
+            #increase the score
+            if bird.x == pipes[i].x + pipeWidth:
+                score += 1
+                
+                
+            
+
+        screen.blit(birdIcon , (bird.x , bird.y))
+        scoreText = font.render(f"{score}" , True , (255, 255, 255))
+        scoreTextBorder = border.render(f"{score}" , True , (0, 0, 0))
+        screen.blit(scoreTextBorder , (572 , 17))
+        screen.blit(scoreText , (575 , 20))
+        pygame.display.update()
